@@ -1,4 +1,6 @@
 package android.template.infra.network
 
-class NetworkDataSource {
+interface NetworkDataSource {
+    suspend fun loadTasks(): List<NetworkTaskDto>
+    suspend fun saveTasks(newTasks: List<NetworkTaskDto>)
 }
