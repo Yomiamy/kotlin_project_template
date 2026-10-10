@@ -34,3 +34,10 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+# Agent Frameworks & Local Cache
+!/.claude/**
+.claude/*.lock
+.claude/settings.local.json
+.gemini/
+app/.agents/
