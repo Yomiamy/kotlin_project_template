@@ -9,7 +9,6 @@ import kotlin.time.Duration.Companion.seconds
 class TaskNetworkDataSrc @Inject constructor() : NetworkDataSource {
     companion object {
         private val SERVICE_LATENCY = 2.seconds
-
     }
 
     private val accessMutex = Mutex()
