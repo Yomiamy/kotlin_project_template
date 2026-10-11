@@ -2,6 +2,7 @@ package android.template.infra.local
 
 import androidx.room.Dao
 import androidx.room.Query
+import androidx.room.Transaction
 import androidx.room.Upsert
 import kotlinx.coroutines.flow.Flow
 
@@ -36,4 +37,14 @@ interface TaskDao {
 
     @Query("delete FROM task")
     suspend fun deleteAll()
+
+    /**
+     * 以 [tasks] 完整取代本地資料。包在 transaction 裡：
+     * observer 不會看到中間的空 list，中途失敗也不會留下被清空的表。
+     */
+    @Transaction
+    suspend fun replaceAll(tasks: List<LocalTaskEntity>) {
+        deleteAll()
+        upsertAll(tasks)
+    }
 }
