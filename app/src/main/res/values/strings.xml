@@ -17,4 +17,8 @@
 <resources>
     <string name="app_name">TodoApplication</string>
     <string name="title_activity_to_do">TodoActivity</string>
+    <string name="tasks_title">Tasks</string>
+    <string name="add_task">Add task</string>
+    <string name="edit_task">Edit task</string>
+    <string name="back">Back</string>
 </resources>
